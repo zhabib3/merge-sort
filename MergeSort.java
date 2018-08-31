@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class MergeSort {
 
-    public static int[] mergeSort(int[] arr) {
+    public int[] mergeSort(int[] arr) {
         // Base Case to stop recursion when leaf nodes are reached
         if (arr.length <= 1) {
             return arr;
@@ -31,7 +31,7 @@ public class MergeSort {
         return result;
     }
 
-    public static int[] mergeHalves(int[] leftArr, int[] rightArr) {
+    public int[] mergeHalves(int[] leftArr, int[] rightArr) {
         int[] c = new int[leftArr.length + rightArr.length];
         int lPtr = 0, cPtr = 0, rPtr = 0;
         // 3 Pointers for each array
@@ -65,22 +65,5 @@ public class MergeSort {
 
         return c;
     }
-
-    public static void main(String[] args) {
-        Random rand = new Random();
-        int[] array = new int[20];
-        System.out.println("Initial Array: ");
-        for (int i = 0; i < array.length; i++) {
-            array[i] = rand.nextInt(20);
-            System.out.println(array[i]);
-        }
-        System.out.println("\nSorted Array:");
-        int[] result = mergeSort(array);
-
-        for (int val: result) {
-            System.out.println(val);
-        }
-    }
-
 
 }
